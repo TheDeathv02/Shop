@@ -3,264 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robux Shop</title>
+    <title>TheDeathShop</title>
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkFBCFZORa9JzdfhtkxwpD25SMJ74T3N2kbc3_RM3NsjKuHC8&s');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            text-shadow: 2px 2px 4px #000;
+        }
+        h1 {
             margin: 0;
-            padding: 0;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        .search-bar {
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77b300 3px solid;
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
         }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
+        .buttons button {
+            padding: 10px 20px;
             font-size: 16px;
+            cursor: pointer;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-        header ul {
-            padding: 0;
-            list-style: none;
-            margin: 0;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        .showcase {
-            min-height: 400px;
-            text-align: center;
-            color: #fff;
-            background: #77b300;
-            padding-top: 100px;
-        }
-        .showcase h1 {
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
-        .showcase p {
-            font-size: 20px;
+        .buttons button:hover {
+            background-color: #666;
         }
         .packages {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            margin-top: 20px;
+            gap: 20px;
         }
         .package {
-            background: #fff;
-            border: #ccc 1px solid;
-            margin-bottom: 20px;
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 8px;
             text-align: center;
-            width: 30%;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 150px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        .package h2 {
-            color: #333;
-        }
-        .package p {
-            font-size: 18px;
-            color: #666;
-        }
-        .package ul {
-            list-style: none;
-            padding: 0;
-        }
-        .package ul li {
-            padding: 10px 0;
-        }
-        .restock {
-            background: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .restock h2 {
-            color: #333;
-        }
-        .restock p {
-            font-size: 18px;
-            color: #666;
-        }
-        .timer {
-            font-size: 24px;
-            color: #77b300;
-            font-weight: bold;
+        .package:hover {
+            background-color: rgba(255, 255, 255, 1);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1>Robux Shop</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="pay.html">Pay</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="showcase">
-        <div class="container">
-            <h1>Welcome to the Robux Shop</h1>
-            <p>Get your Robux at the best prices!</p>
-        </div>
-    </section>
-
-    <div class="container">
-        <section class="packages">
-            <div class="package">
-                <h2><a href="package1.html">Package 1: 100 Robux</a></h2>
-                <p>Price: 1€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-            <div class="package">
-                <h2><a href="package2.html">Package 2: 300 Robux</a></h2>
-                <p>Price: 2€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-            <div class="package">
-                <h2><a href="package3.html">Package 3: 500 Robux</a></h2>
-                <p>Price: 3€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-            <div class="package">
-                <h2><a href="package4.html">Package 4: 700 Robux</a></h2>
-                <p>Price: 4€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-            <div class="package">
-                <h2><a href="package5.html">Package 5: 1000 Robux</a></h2>
-                <p>Price: 5€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-            <div class="package">
-                <h2><a href="package6.html">Package 6: 1200 Robux</a></h2>
-                <p>Price: 6€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-            <div class="package">
-                <h2><a href="package7.html">Package 7: 1500 Robux</a></h2>
-                <p>Price: 7€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-            <div class="package">
-                <h2><a href="package8.html">Package 8: 1700 Robux</a></h2>
-                <p>Price: 8€</p>
-                <p class="stock">Stock Left: 115</p>
-                <p>To purchase, contact me:</p>
-                <ul>
-                    <li>Discord: thedeathv2</li>
-                    <li>Email: thedeathv02@gmail.com</li>
-                </ul>
-            </div>
-        </section>
+    <h1>TheDeathShop</h1>
+    <div class="search-bar">
+        <input type="text" placeholder="Search..." style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
     </div>
-
-    <div class="container">
-        <section class="restock">
-            <h2>Next Restock</h2>
-            <p>New packages will be available in:</p>
-            <div id="timer" class="timer"></div>
-        </section>
+    <div class="buttons">
+        <button onclick="window.location.href='#home'">Home</button>
+        <button onclick="window.location.href='about.html'">About</button>
     </div>
-
-    <script>
-        // Check if the end time is already stored in localStorage
-        if (!localStorage.getItem('countDownDate')) {
-            // Set the date we're counting down to 7 days from now
-            var countDownDate = new Date();
-            countDownDate.setDate(countDownDate.getDate() + 7);
-            localStorage.setItem('countDownDate', countDownDate);
-        } else {
-            var countDownDate = new Date(localStorage.getItem('countDownDate'));
-        }
-
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-            // Get today's date and time
-            var now = new Date().getTime();
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            // Display the result in the element with id="timer"
-            document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-            // If the count down is over, write some text 
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer").innerHTML = "Restocked!";
-                // Optionally reset the timer after restock
-                // localStorage.removeItem('countDownDate');
-            }
-        }, 1000);
-    </script>
+    <div class="packages">
+        <div class="package" onclick="window.location.href='bloxfruits.html'">
+            Blox Fruits
+        </div>
+        <div class="package">
+            Coming Soon...
+        </div>
+        <div class="package">
+            Coming Soon...
+        </div>
+    </div>
 </body>
 </html>

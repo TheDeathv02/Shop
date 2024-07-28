@@ -3,152 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blox Fruits Packages - TheDeathShop</title>
+    <title>Server Control Panel</title>
     <style>
         body {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkFBCFZORa9JzdfhtkxwpD25SMJ74T3N2kbc3_RM3NsjKuHC8&s');
-            background-size: cover;
-            background-repeat: no-repeat;
-            color: white;
-            text-shadow: 2px 2px 4px #000;
-            padding: 20px;
-            box-sizing: border-box;
         }
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
             padding: 10px;
-        }
-        header button {
-            padding: 10px 20px;
-            font-size: 16px;
             cursor: pointer;
-            background-color: #444;
+        }
+        .sidebar ul li:hover {
+            background-color: #34495e;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+        .header {
+            background-color: #3498db;
             color: white;
-            border: none;
-            border-radius: 5px;
-            margin-left: 10px;
-            transition: background-color 0.3s ease;
-        }
-        header button:hover {
-            background-color: #666;
-        }
-        .content {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 8px;
+            padding: 10px 20px;
             text-align: center;
-            max-width: 800px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        .packages {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .package {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            text-align: center;
-            width: 150px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .package:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-        .package img {
-            width: 110px;
-            height: auto;
-        }
-        .paypal-container {
-            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <button onclick="window.location.href='index.html'">Home</button>
-        <button onclick="window.location.href='about.html'">About</button>
-    </header>
-    <div class="content">
-        <h1>Blox Fruits Packages</h1>
-        <div class="packages">
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/6/6e/BuddhaFruit.png/revision/latest/scale-to-width-down/110?cb=20231027115325" alt="Buddha Fruit">
-                <p>Buddha Fruit</p>
-                <p>2 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/e/e4/PortalFruit.png/revision/latest/scale-to-width-down/110?cb=20231027115746" alt="Portal Fruit">
-                <p>Portal Fruit</p>
-                <p>1 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/8/89/RumbleFruit.png/revision/latest/scale-to-width-down/110?cb=20231027120057" alt="Rumble Fruit">
-                <p>Rumble Fruit</p>
-                <p>1 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/d/d3/MammothFruit.png/revision/latest/scale-to-width-down/110?cb=20231027115702" alt="Mammoth Fruit">
-                <p>Mammoth Fruit</p>
-                <p>3 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/e/ea/T-RexFruit.png/revision/latest/scale-to-width-down/110?cb=20231226191220" alt="T-rex Fruit">
-                <p>T-rex Fruit</p>
-                <p>4 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/9/9f/DoughFruit.png/revision/latest/scale-to-width-down/110?cb=20231210155057" alt="Dough Fruit">
-                <p>Dough Fruit</p>
-                <p>4 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/b/b7/VenomFruit.png/revision/latest/scale-to-width-down/110?cb=20231027120425" alt="Venom Fruit">
-                <p>Venom Fruit</p>
-                <p>2 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/0/02/SpiritFruit.png/revision/latest/scale-to-width-down/110?cb=20240304190559" alt="Spirit Fruit">
-                <p>Spirit Fruit</p>
-                <p>2 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/8/8c/LeopardFruit.png/revision/latest/scale-to-width-down/110?cb=20231027115615" alt="Leopard Fruit">
-                <p>Leopard Fruit</p>
-                <p>5 Euro</p>
-            </div>
-            <div class="package">
-                <img src="https://static.wikia.nocookie.net/roblox-blox-piece/images/4/43/DragonFruit.png/revision/latest/scale-to-width-down/110?cb=20231027115513" alt="Dragon Fruit">
-                <p>Dragon Fruit</p>
-                <p>7 Euro</p>
-            </div>
+    <div class="sidebar">
+        <h2>Folders</h2>
+        <ul id="folderList">
+            <!-- Folder items will go here -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h1>Server Control Panel</h1>
         </div>
-        <div class="paypal-container">
-            <script src="https://www.paypal.com/sdk/js?client-id=BAAAumJeKXQWC4XycQFoG5_xHpxfxoVr_tcADNMrSAosoGl5OZxch2qkeygrxNr0mZe_GoOBtLiszR-fwM&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
-            <div id="paypal-container-WYGQKYAKUD4N2"></div>
-            <script>
-                paypal.HostedButtons({
-                    hostedButtonId: "WYGQKYAKUD4N2",
-                }).render("#paypal-container-WYGQKYAKUD4N2")
-            </script>
+        <div>
+            <p>Welcome to the server control panel. Select a folder from the sidebar to view its contents.</p>
         </div>
     </div>
+
+    <script>
+        // Sample folder data
+        const folders = [
+            'Folder 1',
+            'Folder 2',
+            'Folder 3',
+            'Folder 4'
+        ];
+
+        const folderList = document.getElementById('folderList');
+
+        // Add folders to the sidebar
+        folders.forEach(folder => {
+            const li = document.createElement('li');
+            li.textContent = folder;
+            folderList.appendChild(li);
+        });
+
+        // Folder click event
+        folderList.addEventListener('click', (e) => {
+            if(e.target && e.target.nodeName == "LI") {
+                alert(`You clicked on ${e.target.textContent}`);
+            }
+        });
+    </script>
 </body>
 </html>

@@ -6,83 +6,69 @@
     <title>Server Control Panel</title>
     <style>
         body {
-            display: flex;
-            min-height: 100vh;
-            margin: 0;
             font-family: Arial, sans-serif;
-        }
-        .sidebar {
-            width: 250px;
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px;
-        }
-        .sidebar h2 {
-            text-align: center;
-        }
-        .sidebar ul {
-            list-style-type: none;
+            background-color: #f4f4f4;
+            margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .sidebar ul li {
-            padding: 10px;
-            cursor: pointer;
-        }
-        .sidebar ul li:hover {
-            background-color: #34495e;
-        }
-        .main-content {
-            flex: 1;
+        .dashboard {
+            background-color: #fff;
             padding: 20px;
-            background-color: #ecf0f1;
-        }
-        .header {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
             text-align: center;
+            width: 300px;
+        }
+        .dashboard h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .dashboard p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .dashboard button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 4px;
+        }
+        .dashboard button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Folders</h2>
-        <ul id="folderList">
-            <!-- Folder items will go here -->
-        </ul>
-    </div>
-    <div class="main-content">
-        <div class="header">
-            <h1>Server Control Panel</h1>
-        </div>
-        <div>
-            <p>Welcome to the server control panel. Select a folder from the sidebar to view its contents.</p>
-        </div>
+    <div class="dashboard">
+        <h1>Server Control Panel</h1>
+        <p>RAM Usage: <span id="ramUsage">0%</span></p>
+        <p>CPU Usage: <span id="cpuUsage">0%</span></p>
+        <p>Players Online: <span id="playersCount">0</span></p>
+        <button id="startButton">Start Server</button>
     </div>
 
     <script>
-        // Sample folder data
-        const folders = [
-            'Folder 1',
-            'Folder 2',
-            'Folder 3',
-            'Folder 4'
-        ];
+        // Simulate updating RAM, CPU, and player count
+        function updateStats() {
+            document.getElementById('ramUsage').innerText = Math.floor(Math.random() * 100) + '%';
+            document.getElementById('cpuUsage').innerText = Math.floor(Math.random() * 100) + '%';
+            document.getElementById('playersCount').innerText = Math.floor(Math.random() * 50);
+        }
 
-        const folderList = document.getElementById('folderList');
+        // Call updateStats every second
+        setInterval(updateStats, 1000);
 
-        // Add folders to the sidebar
-        folders.forEach(folder => {
-            const li = document.createElement('li');
-            li.textContent = folder;
-            folderList.appendChild(li);
-        });
-
-        // Folder click event
-        folderList.addEventListener('click', (e) => {
-            if(e.target && e.target.nodeName == "LI") {
-                alert(`You clicked on ${e.target.textContent}`);
-            }
+        // Simulate server start button click
+        document.getElementById('startButton').addEventListener('click', function() {
+            alert('Server is starting...');
         });
     </script>
 </body>

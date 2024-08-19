@@ -3,73 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Control Panel</title>
+    <title>Donate - NetAventusEU</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        body, html {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.squarespace-cdn.com/content/v1/5fe4caeadae61a2f19719512/16c2e14f-1701-48a7-aab9-360da81c4340/Swamp+Nighttime');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
         }
-        .dashboard {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+
+        .transparent-band {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
             text-align: center;
-            width: 300px;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
-        .dashboard h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
+
+        .transparent-band h1 {
+            margin: 0;
         }
-        .dashboard p {
-            margin: 10px 0;
+
+        .sidebar {
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            height: calc(100% - 80px);
+            padding-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
             font-size: 18px;
-        }
-        .dashboard button {
-            margin-top: 20px;
+            display: block;
             padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background-color: #007BFF;
-            color: #fff;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
         }
-        .dashboard button:hover {
-            background-color: #0056b3;
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+            margin-top: 120px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .content h2 {
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+
+        .content p {
+            color: white;
+            text-shadow: 1px 1px 2px black;
         }
     </style>
 </head>
 <body>
-    <div class="dashboard">
-        <h1>Server Control Panel</h1>
-        <p>RAM Usage: <span id="ramUsage">0%</span></p>
-        <p>CPU Usage: <span id="cpuUsage">0%</span></p>
-        <p>Players Online: <span id="playersCount">0</span></p>
-        <button id="startButton">Start Server</button>
+    <div class="transparent-band">
+        <h1>NetAventusEU</h1>
     </div>
-
-    <script>
-        // Simulate updating RAM, CPU, and player count
-        function updateStats() {
-            document.getElementById('ramUsage').innerText = Math.floor(Math.random() * 100) + '%';
-            document.getElementById('cpuUsage').innerText = Math.floor(Math.random() * 100) + '%';
-            document.getElementById('playersCount').innerText = Math.floor(Math.random() * 50);
-        }
-
-        // Call updateStats every second
-        setInterval(updateStats, 1000);
-
-        // Simulate server start button click
-        document.getElementById('startButton').addEventListener('click', function() {
-            alert('Server is starting...');
-        });
-    </script>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="donate.html">Donate</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Support NetAventusEU</h2>
+        <p>Thank you for considering a donation to NetAventusEU! Your generosity helps us keep the server running smoothly and allows us to continue building a great community for Minecraft players across Europe. Every donation, big or small, makes a difference. Thank you for your support!</p>
+        <!-- PayPal Hosted Button -->
+	<div id="paypal-container-33GAJMXAMQ4SA"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=BAAAumJeKXQWC4XycQFoG5_xHpxfxoVr_tcADNMrSAosoGl5OZxch2qkeygrxNr0mZe_GoOBtLiszR-fwM&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+	<script>
+	  paypal.HostedButtons({
+	    hostedButtonId: "33GAJMXAMQ4SA",
+	  }).render("#paypal-container-33GAJMXAMQ4SA")
+	</script>
+    </div>
 </body>
 </html>

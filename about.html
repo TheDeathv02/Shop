@@ -3,96 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - TheDeathShop</title>
+    <title>About - NetAventusEU</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+        body, html {
             margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkFBCFZORa9JzdfhtkxwpD25SMJ74T3N2kbc3_RM3NsjKuHC8&s');
+            background-image: url('https://steamuserimages-a.akamaihd.net/ugc/2310974141604980016/B4EF3A7A2D1772DE26B1A6F51CE33A04FD8BB917/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false');
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
             color: white;
-            text-shadow: 2px 2px 4px #000;
-            padding: 20px;
-            box-sizing: border-box;
         }
-        header {
+
+        .transparent-band {
             width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
-        header button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #444;
+
+        .transparent-band h1 {
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 80px;
+            left: 0;
+            height: calc(100% - 80px);
+            padding-top: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
             color: white;
-            border: none;
-            border-radius: 5px;
-            margin-left: 10px;
-            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 10px 20px;
         }
-        header button:hover {
-            background-color: #666;
+
+        .sidebar ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
         }
+
         .content {
-            background-color: rgba(255, 255, 255, 0.8);
+            margin-left: 220px;
             padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 800px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top: 120px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
         }
-        h1 {
-            margin-bottom: 20px;
+
+        .content h2 {
+            color: white;
+            text-shadow: 1px 1px 2px black;
         }
-        p {
-            margin-bottom: 20px;
-        }
-        .packages {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-        }
-        .package {
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            text-align: center;
-            width: 150px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .package:hover {
-            background-color: rgba(255, 255, 255, 1);
+
+        .content p {
+            color: white;
+            text-shadow: 1px 1px 2px black;
         }
     </style>
 </head>
 <body>
-    <header>
-        <button onclick="window.location.href='index.html'">Home</button>
-    </header>
+    <div class="transparent-band">
+        <h1>NetAventusEU</h1>
+    </div>
+    <div class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="donate.html">Donate</a></li>
+        </ul>
+    </div>
     <div class="content">
-        <h1>About TheDeathShop</h1>
-        <p>Welcome to TheDeathShop, your one-stop destination for all things dark and mysterious. We offer a variety of packages to cater to your interests. Explore our unique offerings and stay tuned for more exciting products coming soon!</p>
-        <div class="packages">
-            <div class="package" onclick="window.location.href='bloxfruits.html'">
-                Blox Fruits
-            </div>
-            <div class="package">
-                Coming Soon...
-            </div>
-            <div class="package">
-                Coming Soon...
-            </div>
-        </div>
+        <h2>About NetAventusEU</h2>
+        <p>Welcome to NetAventusEU! This server was created with a dream of building a large, friendly community of Minecraft players from all over Europe. I started this server because I believe in the power of community, and I want to provide a place where players can enjoy survival mode in a supportive, fun, and creative environment. My dream is to make NetAventusEU the best Minecraft server in Europe, where players of all levels can come together to build, explore, and create.</p>
+        <p>Join us on this incredible journey and be part of a growing community of passionate Minecraft players!</p>
     </div>
 </body>
 </html>

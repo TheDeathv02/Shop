@@ -82,10 +82,14 @@
             text-shadow: 1px 1px 2px black;
         }
 
+        /* Add this style for the Discord icon */
         .discord-icon {
-            width: 32px;
-            height: 32px;
-            margin-left: 10px;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            z-index: 1100; /* Ensures it stays on top */
         }
     </style>
 </head>
@@ -106,8 +110,10 @@
         <p>Welcome to NetAventusEU, a Minecraft server dedicated to pure survival. Enjoy an incredible community with a great staff that ensures a friendly and fun experience. Dive into the world of survival, explore, build, and thrive with fellow players.</p>
         <p>Join us today and become part of the adventure!</p>
     </div>
-    <a href="https://discord.gg/Q7J3G2JvyK">
-        <img class="discord-icon" src="data:image/png;base64,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" alt="Discord">
+    
+    <!-- Discord Icon -->
+    <a href="https://discord.gg/PRWYFvBSNR" target="_blank">
+        <img class="discord-icon" src="https://cdn.prod.website-files.com/625fe439fb70a9d901e138ab/648c1a09c6a80c200fa95349_628c05f2e63f068e62b96336_Discord%20Author%20Black.png" alt="Join our Discord">
     </a>
 </body>
 </html>

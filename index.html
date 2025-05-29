@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Calculator</title>
+  <title>Simple Calculator + Sound</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,6 +12,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
+      flex-direction: column;
     }
     .calculator {
       background: white;
@@ -19,6 +20,7 @@
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
       width: 300px;
+      margin-bottom: 20px;
     }
     input, select, button {
       width: 100%;
@@ -45,27 +47,20 @@
     </select>
     <input type="number" id="num2" placeholder="Second number" />
     <button onclick="calculate()">Calculate</button>
-    
-    <!-- Buton pentru redare sunet -->
-    <button onclick="playSound()">Press this(trust me it will work 100%)</button>
-
     <div id="result"></div>
   </div>
 
-  <!-- Element audio ascuns -->
+  <!-- AUDIO BUTTON -->
   <audio id="sound">
-    <source src="https://www.myinstants.com/en/instant/anime-ahh-73606/?utm_source=copy&utm_medium=share" type="audio/mpeg">
-    Your browser is shit so please kys.
+    <source src="https://www.myinstants.com/media/sounds/goofy-ahh-car-horn.mp3" type="audio/mpeg">
+    Your phone is shit kys.
   </audio>
+
+  <button onclick="document.getElementById('sound').play()">Press this it will work 100%!</button>
 
   <script>
     function calculate() {
-      document.getElementById("result").textContent = "Stupid monkey i aint a calculator";
-    }
-
-    function playSound() {
-      var audio = document.getElementById("sound");
-      audio.play();
+      document.getElementById("result").textContent = "Stupid monkey i ain't a calculator";
     }
   </script>
 </body>

@@ -45,13 +45,27 @@
     </select>
     <input type="number" id="num2" placeholder="Second number" />
     <button onclick="calculate()">Calculate</button>
+    
+    <!-- Buton pentru redare sunet -->
+    <button onclick="playSound()">Apasă pentru sunet</button>
+
     <div id="result"></div>
   </div>
 
+  <!-- Element audio ascuns -->
+  <audio id="sound">
+    <source src="sound.mp3" type="audio/mpeg">
+    Browserul tău nu suportă redarea audio.
+  </audio>
+
   <script>
     function calculate() {
-      // În loc de calcul real, afișăm "Hello world!"
       document.getElementById("result").textContent = "Stupid monkey i aint a calculator";
+    }
+
+    function playSound() {
+      var audio = document.getElementById("sound");
+      audio.play();
     }
   </script>
 </body>

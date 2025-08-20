@@ -1,67 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Calculator + Sound</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-    }
-    .calculator {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-      width: 300px;
-      margin-bottom: 20px;
-    }
-    input, select, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-    #result {
-      margin-top: 15px;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="calculator">
-    <h3>Calculator</h3>
-    <input type="number" id="num1" placeholder="First number" />
-    <select id="operator">
-      <option value="+">+</option>
-      <option value="-">−</option>
-      <option value="*">×</option>
-      <option value="/">÷</option>
-    </select>
-    <input type="number" id="num2" placeholder="Second number" />
-    <button onclick="calculate()">Calculate</button>
-    <div id="result"></div>
-  </div>
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Audio Button – Goofy Horn</title>
+    <style>
+      :root { --bg: #0f1226; --fg: #e9ecf1; --accent: #7c5cff; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(1200px 800px at 70% 20%, #1a1f3f 0%, #0f1226 60%, #0a0c18 100%);
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--fg);
+      }
+      .card {
+        width: min(92vw, 520px);
+        padding: 24px;
+        border-radius: 16px;
+        background: rgba(255,255,255,0.04);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+        backdrop-filter: blur(6px);
+        text-align: center;
+      }
+      h1 { font-size: 1.25rem; font-weight: 700; margin: 0 0 12px; letter-spacing: 0.2px; }
+      p { margin: 0 0 18px; opacity: 0.8; }
+      button {
+        appearance: none; border: 0; cursor: pointer;
+        padding: 14px 22px; border-radius: 999px; font-weight: 700; font-size: 1rem;
+        background: var(--accent); color: white; box-shadow: 0 10px 20px rgba(124,92,255,0.35);
+        transition: transform .08s ease, box-shadow .08s ease, filter .2s ease;
+      }
+      button:hover { filter: brightness(1.08); }
+      button:active { transform: translateY(1px) scale(0.99); box-shadow: 0 6px 14px rgba(124,92,255,0.35); }
+      .note { margin-top: 14px; font-size: .95rem; opacity: .85; }
+      .tiny { margin-top: 8px; font-size: .8rem; opacity: .65; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <!-- AUDIO BUTTON -->
+      <audio id="sound" preload="auto">
+        <source src="https://www.myinstants.com/media/sounds/goofy-ahh-car-horn.mp3" type="audio/mpeg" />
+        Browserul tău nu poate reda audio HTML5.
+      </audio>
 
-  <!-- AUDIO BUTTON -->
-  <audio id="sound">
-    <source src="https://www.myinstants.com/media/sounds/goofy-ahh-car-horn.mp3" type="audio/mpeg">
-    Your phone is shit kys.
-  </audio>
+      <h1>Buton audio</h1>
+      <p>Apasă butonul pentru a reda sunetul. (This button is for closing gta — press this)</p>
 
-  <button onclick="document.getElementById('sound').play()"This Button is for cs:go press this"</button>
+      <button id="play" type="button" aria-label="Redă sunetul">▶️ Play</button>
 
-  <script>
-    function calculate() {
-      document.getElementById("result").textContent = "❤Ur a monkey🥀";
-    }
-  </script>
-</body>
+      <div class="note">for closing GTA</div>
+      <div class="tiny">Sunet: "goofy ahh car horn" (mp3)</div>
+    </main>
+
+    <script>
+      const btn = document.getElementById('play');
+      const audio = document.getElementById('sound');
+      btn.addEventListener('click', () => {
+        try {
+          audio.currentTime = 0; // pornește de la început la fiecare apăsare
+          audio.play();
+        } catch (e) {
+          console.error(e);
+        }
+      });
+    </script>
+  </body>
 </html>
